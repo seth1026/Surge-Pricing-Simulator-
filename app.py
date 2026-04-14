@@ -9,7 +9,7 @@ st.title("🚖 Dynamic Pricing & Demand Intelligence Dashboard")
 # ---- Load Data ----
 @st.cache_data
 def load_data():
-    df = pd.read_csv("processed_taxi_data.csv")
+    df = pd.read_csv("sample_data.csv")
 
     df = df.sample(n=100000, random_state=42)
 
