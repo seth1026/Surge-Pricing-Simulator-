@@ -11,7 +11,9 @@ st.title("🚖 Dynamic Pricing & Demand Intelligence Dashboard")
 def load_data():
     df = pd.read_csv("sample_data.csv")
 
-    df = df.sample(n=100000, random_state=42)
+    # Safe sampling
+    sample_size = min(100000, len(df))
+    df = df.sample(n=sample_size, random_state=42)
 
     df = df[
         [
